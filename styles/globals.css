@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+  .text-gradient{
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+ .bg-yellow-light{
+  background-color: #e5d16b;
+ }
+ .text-secondary-dark{
+  color: rgb(235, 45, 146);
+ }
+ .border-secondary-dark{
+  border-color: rgb(235, 45, 146);
+ }
+ .text-primary-dark{
+  color: #f1c902;
+ }
+ .border-primary-medium{
+  border-color: #eed764;
+ }
+ .border-secondary-medium{
+  border-color: rgb(235, 45, 146);
+ }
+ :hover::border-primary-dark{
+  border-color: #e8c721;
+ }
+ .bg-hover-primary:hover{
+  background: #e8c721;
+ }
+ .bg-hover-secondary:hover{
+  background: rgb(235, 45, 146);
+ }
+ .custom-img{
+  background-image: url('/Imgs/contact_bg.jpg');
+ }
+}
