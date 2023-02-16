@@ -37,4 +37,13 @@
  .custom-img{
   background-image: url('/Imgs/contact_bg.jpg');
  }
+ .ring-primary-medium:hover {
+border-color: #e8c721;
+ }
+ /* .primary-medium{
+  color: #FFEE58;
+ }
+ .primary-dark{
+  color: #FFEB3B;
+ } */
 }

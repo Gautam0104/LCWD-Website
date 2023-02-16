@@ -4,10 +4,14 @@ import { useState } from 'react';
 import NavLink from 'next/link';
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
-  const handleNav = () => {
-    setNav(!nav);
-  };
+  const [Show, setShow] = useState(false);
+
+  const showMenu = () =>{
+    setShow(true);
+  }
+  const hideMenu = () =>{
+    setShow(false);
+  }
   return (
     <>
     <div className="z-50 fixed top-0 left-0 right-0 backdrop-blur-lg bg-neutral-300/20">
@@ -25,7 +29,8 @@ const Navbar = () => {
           </a>
         </div>
        
-        <div className="lg:hidden flex flex-col justify-center" onClick={handleNav}>
+        <div className="lg:hidden flex flex-col justify-center"    onClick={showMenu} 
+                 >
           <svg className="w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
           </svg>
@@ -46,8 +51,8 @@ const Navbar = () => {
       </div>
      
     </div>
-    
-    <div class="absolute lg:invisible">
+    <div className={Show === true ? "block" : "hidden"} >
+    <div id='link2' class="absolute lg:invisible">
 <div class="z-50 fixed top-0 left-0 right-0 backdrop-blur-lg bg-neutral-300/20">
 <div class="flex flex-row justify-between px-2 py-1 h-16 ">
 <div class="flex flex-col justify-center">
@@ -64,7 +69,8 @@ const Navbar = () => {
           </a>
 
 </div>
-<div class="flex flex-col justify-center"><svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+<div class="flex flex-col justify-center"  onClick={hideMenu}>
+  <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
 </svg>
 </div>
@@ -87,7 +93,7 @@ const Navbar = () => {
 </div>
 </div>
 </div>
-    
+    </div>
     </>
 
 
